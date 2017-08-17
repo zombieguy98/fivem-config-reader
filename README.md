@@ -22,3 +22,8 @@ To correctly load resources you must first create the ini and add it to your __r
   file 'fileName' 
 ```  
 
+#Planned features include:
+  -Load all section functions
+  -load arrays
+  -custom ini loading
+
