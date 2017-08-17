@@ -22,9 +22,11 @@ To correctly load resources you must first create the ini and add it to your __r
   file 'fileName' 
 ```  
 
-# Planned features include:
+# Planned features:
 <ul>
-<li>Load all section functions</li>
+<li>Load whole section data</li>
 <li>load arrays</li>
 <li>custom ini loading</li>
+<li>Basic xml file support</li>
+<li>Custom structure support</li>
 </ul>
