@@ -17,4 +17,7 @@ You will then be able to access the ini file's data using its methods, like so:
 ```  
 
 To correctly load resources you must first create the ini and add it to your __resource.lua file like so:
-file 'fileName' 
+```
+  file 'fileName' 
+```  
+
