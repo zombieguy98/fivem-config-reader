@@ -156,6 +156,8 @@ namespace Config
             /// <returns></returns>
             public string GetStringValue(string section, string key, string fallBack)
             {
+                section = section.ToLower();
+                key = key.ToLower();
                 if (dict.ContainsKey("[" + section + "]" + key))
                 {
                     return dict["[" + section + "]" + key];
@@ -173,6 +175,8 @@ namespace Config
             /// <returns></returns>
             public double GetDoubleValue(string section, string key, double fallBack)
             {
+                section = section.ToLower();
+                key = key.ToLower();
                 if (dict.ContainsKey("[" + section + "]" + key))
                 {
                     // TRYS TO CONVERT A STRING TO AN INT
@@ -197,6 +201,8 @@ namespace Config
             /// <returns></returns>
             public float GetFloatValue(string section, string key, float fallBack)
             {
+                section = section.ToLower();
+                key = key.ToLower();
                 if (dict.ContainsKey("[" + section + "]" + key))
                 {
                     // TRYS TO CONVERT A STRING TO A FLOAT
@@ -221,11 +227,39 @@ namespace Config
             /// <returns></returns>
             public int GetIntValue(string section, string key, int fallBack)
             {
+                section = section.ToLower();
+                key = key.ToLower();
                 if (dict.ContainsKey("[" + section + "]" + key))
                 {
                     // TRYS TO CONVERT A STRING TO AN INT
                     int result;
                     if (int.TryParse(dict["[" + section + "]" + key], out result))
+                    {
+                        // STRING CONVERSION SUCCEEDED
+                        return result;
+                    }
+                    else { return fallBack; } // CONVERSION FAILED: RETURN FALLBACK
+                }
+                return fallBack;
+            }
+
+            /// <summary>
+            /// Returns the (bool) value corresponding to the key, if it does not exist, then the fallback will be returned instead!
+            /// [section] key = VALUE
+            /// </summary>
+            /// <param name="section"></param>
+            /// <param name="key"></param>
+            /// <param name="fallBack"></param>
+            /// <returns></returns>
+            public bool GetBoolValue(string section, string key, bool fallBack)
+            {
+                section = section.ToLower();
+                key = key.ToLower();
+                if (dict.ContainsKey("[" + section + "]" + key))
+                {
+                    // TRYS TO CONVERT A STRING TO AN INT
+                    bool result;
+                    if (bool.TryParse(dict["[" + section + "]" + key], out result))
                     {
                         // STRING CONVERSION SUCCEEDED
                         return result;
