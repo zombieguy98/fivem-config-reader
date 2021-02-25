@@ -95,7 +95,7 @@ namespace Config
                             // CHECK IF THE LINE CONTAINS A [SECTION]
                             if (line.StartsWith("[") && line.Contains("]"))  // [SECTION] FOUND!
                             {
-                                section = line.Substring(1, line.IndexOf(']') - 1).Trim(); // STORE SECTION IN THE TEMP STRING
+                                section = line.Substring(2, line.IndexOf(']') - 2).Trim(); // STORE SECTION IN THE TEMP STRING
                                 continue; // SKIP TO NEXT LINE NOW THE SECTION HAS BEEN SAVED
                             }
                             #endregion
